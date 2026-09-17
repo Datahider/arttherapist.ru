@@ -7,7 +7,7 @@ if (!isset($page_title, $page_description, $content_template, $base_path)) {
 }
 
 $asset_path = $base_path . 'assets/';
-$style_version = filemtime(dirname(__DIR__) . '/public/assets/style.css');
+$style_version = md5_file(dirname(__DIR__) . '/public/assets/style.css');
 
 if ($style_version === false) {
     throw new RuntimeException('Stylesheet version cannot be determined.');
