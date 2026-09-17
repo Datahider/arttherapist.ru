@@ -28,6 +28,7 @@ foreach ([
     '/templates/footer.php',
     '/content/home.php',
     '/content/transform.php',
+    '/content/not-found.php',
     '/public/index.php',
     '/public/transform/index.php',
     '/public/transform2/index.php',
@@ -39,6 +40,7 @@ foreach ([
 }
 
 if (is_file($project_dir . '/public/index.php')) {
+    $_SERVER['REQUEST_URI'] = '/';
     $home = renderPage($project_dir . '/public/index.php');
     assertTrue(str_contains($home, '<html lang="ru">'), 'Homepage must declare Russian language');
     assertTrue(str_contains($home, 'Наталья Харитон'), 'Homepage must name Natalia');
@@ -48,6 +50,17 @@ if (is_file($project_dir . '/public/index.php')) {
     assertTrue(substr_count($home, '<header') === 1, 'Homepage must render one shared header');
     assertTrue(substr_count($home, '<footer') === 1, 'Homepage must render one shared footer');
     assertTrue(str_contains($home, 'https://disk.yandex.ru/d/o9gz82aJnASqJg'), 'Footer must link to education documents');
+
+    $_SERVER['REQUEST_URI'] = '/missing-page/';
+    http_response_code(200);
+    $not_found = renderPage($project_dir . '/public/index.php');
+    assertTrue(http_response_code() === 404, 'Unknown routes must return HTTP 404');
+    assertTrue(str_contains($not_found, 'Такой страницы нет'), 'Unknown routes must render the 404 page');
+    assertTrue(str_contains($not_found, '<meta name="robots" content="noindex, follow">'), '404 page must not be indexed');
+    assertTrue(!str_contains($not_found, 'Давайте<br><em>порисуем?</em>'), 'Unknown routes must not render the homepage');
+
+    $_SERVER['REQUEST_URI'] = '/';
+    http_response_code(200);
 }
 
 if (is_file($project_dir . '/public/transform/index.php')) {
