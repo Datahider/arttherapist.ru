@@ -7,6 +7,11 @@ if (!isset($page_title, $page_description, $content_template, $base_path)) {
 }
 
 $asset_path = $base_path . 'assets/';
+$style_version = filemtime(dirname(__DIR__) . '/public/assets/style.css');
+
+if ($style_version === false) {
+    throw new RuntimeException('Stylesheet version cannot be determined.');
+}
 ?><!doctype html>
 <html lang="ru">
 <head>
@@ -15,7 +20,7 @@ $asset_path = $base_path . 'assets/';
     <title><?= htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8') ?></title>
     <meta name="description" content="<?= htmlspecialchars($page_description, ENT_QUOTES, 'UTF-8') ?>">
     <link rel="icon" href="<?= $asset_path ?>images/favicon.png" type="image/png">
-    <link rel="stylesheet" href="<?= $asset_path ?>style.css">
+    <link rel="stylesheet" href="<?= $asset_path ?>style.css?v=<?= $style_version ?>">
 </head>
 <body class="page-<?= htmlspecialchars($page_id ?? 'default', ENT_QUOTES, 'UTF-8') ?>">
 <?php require __DIR__ . '/header.php'; ?>
@@ -25,4 +30,3 @@ $asset_path = $base_path . 'assets/';
 <?php require __DIR__ . '/footer.php'; ?>
 </body>
 </html>
-
