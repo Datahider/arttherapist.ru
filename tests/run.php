@@ -54,6 +54,13 @@ if (is_file($project_dir . '/public/transform/index.php')) {
     assertTrue(substr_count($program, '<footer') === 1, 'Program must render one shared footer');
 }
 
+if (is_file($project_dir . '/public/assets/style.css')) {
+    $css = (string) file_get_contents($project_dir . '/public/assets/style.css');
+    assertTrue(str_contains($css, '.program-art::before'), 'Program background must be tied to its media side');
+    assertTrue(str_contains($css, '@media (max-width: 1050px)'), 'Program hero must have its own mobile breakpoint');
+    assertTrue(!str_contains($css, 'linear-gradient(110deg, var(--paper) 0 58%, var(--peach) 58%)'), 'Program diagonal must not be tied to the viewport');
+}
+
 if ($failures !== []) {
     fwrite(STDERR, implode(PHP_EOL, $failures) . PHP_EOL);
     exit(1);
