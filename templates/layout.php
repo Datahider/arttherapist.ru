@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-if (!isset($page_title, $page_description, $content_template, $base_path)) {
+if (!isset($page_title, $page_description, $canonical_url, $og_image, $content_template, $base_path)) {
     throw new LogicException('Page metadata and content template are required.');
 }
 
@@ -19,6 +19,15 @@ if ($style_version === false) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?= htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8') ?></title>
     <meta name="description" content="<?= htmlspecialchars($page_description, ENT_QUOTES, 'UTF-8') ?>">
+    <link rel="canonical" href="<?= htmlspecialchars($canonical_url, ENT_QUOTES, 'UTF-8') ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:site_name" content="Арт-терапевт Наталья Харитон">
+    <meta property="og:title" content="<?= htmlspecialchars($page_title, ENT_QUOTES, 'UTF-8') ?>">
+    <meta property="og:description" content="<?= htmlspecialchars($page_description, ENT_QUOTES, 'UTF-8') ?>">
+    <meta property="og:url" content="<?= htmlspecialchars($canonical_url, ENT_QUOTES, 'UTF-8') ?>">
+    <meta property="og:image" content="<?= htmlspecialchars($og_image, ENT_QUOTES, 'UTF-8') ?>">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="<?= $asset_path ?>images/favicon.png" type="image/png">
     <link rel="stylesheet" href="<?= $asset_path ?>style.css?v=<?= $style_version ?>">
 </head>

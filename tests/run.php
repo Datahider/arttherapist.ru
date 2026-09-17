@@ -30,7 +30,10 @@ foreach ([
     '/content/transform.php',
     '/public/index.php',
     '/public/transform/index.php',
+    '/public/transform2/index.php',
     '/public/assets/style.css',
+    '/public/robots.txt',
+    '/public/sitemap.xml',
 ] as $required_file) {
     assertTrue(is_file($project_dir . $required_file), 'Missing required file: ' . $required_file);
 }
@@ -40,6 +43,8 @@ if (is_file($project_dir . '/public/index.php')) {
     assertTrue(str_contains($home, '<html lang="ru">'), 'Homepage must declare Russian language');
     assertTrue(str_contains($home, 'Наталья Харитон'), 'Homepage must name Natalia');
     assertTrue(str_contains($home, 'href="./transform/"'), 'Homepage must link to the program');
+    assertTrue(str_contains($home, '<link rel="canonical" href="https://arttherapist.ru/">'), 'Homepage must have its final canonical URL');
+    assertTrue(str_contains($home, '<meta property="og:image" content="https://arttherapist.ru/assets/images/natalia-portrait.png">'), 'Homepage must have an Open Graph image');
     assertTrue(substr_count($home, '<header') === 1, 'Homepage must render one shared header');
     assertTrue(substr_count($home, '<footer') === 1, 'Homepage must render one shared footer');
     assertTrue(str_contains($home, 'https://disk.yandex.ru/d/o9gz82aJnASqJg'), 'Footer must link to education documents');
@@ -50,9 +55,27 @@ if (is_file($project_dir . '/public/transform/index.php')) {
     $telegram_link = 'https://t.me/Nata_lia1?text=';
     assertTrue(str_contains($program, 'Программа «Трансформация»'), 'Program page must have its public heading');
     assertTrue(substr_count($program, $telegram_link) >= 2, 'Both program calls to action must lead to Telegram');
+    assertTrue(str_contains($program, '<link rel="canonical" href="https://arttherapist.ru/transform/">'), 'Program must have its final canonical URL');
+    assertTrue(str_contains($program, '<meta property="og:image" content="https://arttherapist.ru/assets/images/transform.png">'), 'Program must have an Open Graph image');
     assertTrue(!preg_match('/href=["\']#["\']/', $program), 'Program page must not contain placeholder links');
     assertTrue(substr_count($program, '<header') === 1, 'Program must render one shared header');
     assertTrue(substr_count($program, '<footer') === 1, 'Program must render one shared footer');
+}
+
+if (is_file($project_dir . '/public/transform2/index.php')) {
+    $redirect = (string) file_get_contents($project_dir . '/public/transform2/index.php');
+    assertTrue(str_contains($redirect, "header('Location: ../transform/', true, 301)"), 'Legacy program URL must permanently redirect');
+}
+
+if (is_file($project_dir . '/public/robots.txt')) {
+    $robots = (string) file_get_contents($project_dir . '/public/robots.txt');
+    assertTrue(str_contains($robots, 'Sitemap: https://arttherapist.ru/sitemap.xml'), 'Robots must advertise the sitemap');
+}
+
+if (is_file($project_dir . '/public/sitemap.xml')) {
+    $sitemap = (string) file_get_contents($project_dir . '/public/sitemap.xml');
+    assertTrue(substr_count($sitemap, '<url>') === 2, 'Sitemap must contain exactly two public pages');
+    assertTrue(str_contains($sitemap, '<loc>https://arttherapist.ru/transform/</loc>'), 'Sitemap must contain the program');
 }
 
 if (is_file($project_dir . '/public/assets/style.css')) {

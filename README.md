@@ -34,6 +34,7 @@
 - [`docs/site-contract.md`](docs/site-contract.md) — страницы, архитектурный контракт, адаптивность и публикация;
 - [`docs/content-scope.md`](docs/content-scope.md) — какие страницы WordPress являются источником переноса;
 - [`docs/content-audit.md`](docs/content-audit.md) — контент и технические детали, которые ещё не перенесены;
+- [`docs/assets-inventory.md`](docs/assets-inventory.md) — соответствие исходных изображений WordPress локальным файлам;
 - [`AGENTS.md`](AGENTS.md) — локальные правила для ИИ-агентов.
 
 Каталог `docs/` исключён из `deploy.sh` и на production-сервер не отправляется.
@@ -109,5 +110,17 @@ bash deploy.sh
 - Не добавлять CMS, базу данных или JavaScript-фреймворк без отдельного решения владельца.
 - Не сокращать опубликованные тексты молча. Найденные расхождения сначала фиксировать в `docs/content-audit.md`.
 - Повторяющиеся элементы реализовывать через PHP-шаблоны.
+
+## Переключение document root
+
+Итоговый document root должен указывать на каталог `public/` через существующий симлинк `/home/arttherapist/htdocs/arttherapist.ru/new`.
+
+После переключения необходимо проверить:
+
+- `/` и `/transform/` отвечают `200`;
+- `/transform2/` отвечает `301` и ведёт на `/transform/`;
+- `/robots.txt` и `/sitemap.xml` доступны;
+- canonical и Open Graph URL больше не содержат `/new/`;
+- старый WordPress не используется как обработчик отсутствующих маршрутов.
 
 Тег `transform1` сохраняет дизайн страницы программы до последующей переработки адаптивного первого экрана.

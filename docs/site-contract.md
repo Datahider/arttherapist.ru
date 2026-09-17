@@ -50,3 +50,11 @@
 - Цель: `/home/arttherapist/apps/arttherapist-site`.
 - `/home/arttherapist/htdocs/arttherapist.ru/new` — симлинк на каталог `public` приложения.
 - Существующий WordPress и его файлы не изменяются.
+
+## Переключение в корень домена
+
+- Canonical и Open Graph URL указывают на итоговые адреса в корне `https://arttherapist.ru/`.
+- Старый действующий адрес `/transform2/` отвечает постоянным редиректом на `/transform/`.
+- `/robots.txt` разрешает индексацию и указывает на `/sitemap.xml`.
+- Sitemap содержит только главную страницу и программу `/transform/`.
+- Демо-страницы WordPress не перенаправляются и не включаются в sitemap.
