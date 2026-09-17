@@ -95,7 +95,6 @@ em { color: var(--clay); font-style: italic; }
 
 .program-hero { overflow: hidden; background: linear-gradient(110deg, var(--paper) 0 58%, var(--peach) 58%); }
 .program-hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; min-height: 750px; padding-top: 70px; }
-.program-hero-grid > * { min-width: 0; }
 .program-hero h1 { font-size: clamp(3.3rem, 6vw, 6rem); }
 .program-art { align-self: end; }
 .program-art img { width: min(540px, 100%); margin-inline: auto; filter: drop-shadow(0 30px 40px rgba(41,53,47,.15)); }
@@ -159,8 +158,7 @@ em { color: var(--clay); font-style: italic; }
     .gallery-pair { gap: 8px; }
     .teaser-inner { display: block; }
     .price-grid .featured { transform: none; }
-    .program-hero h1 { font-size: clamp(2.55rem, 10.5vw, 3rem); letter-spacing: -.045em; overflow-wrap: break-word; }
-    .program-hero .lead { max-width: 100%; }
+    .program-hero h1 { font-size: clamp(2.8rem, 14vw, 4.4rem); }
     .hero-meta { gap: 16px; }
     .route-list li { grid-template-columns: 58px 1fr; gap: 15px; }
     .footer-inner { grid-template-columns: 1fr; gap: 20px; }
