@@ -43,4 +43,4 @@ ssh "${ssh_options[@]}" "$remote" "
     fi
 "
 
-printf 'Deployed to https://arttherapist.ru/new/\n'
+printf 'Deployed to https://arttherapist.ru/\n'

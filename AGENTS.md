@@ -9,5 +9,5 @@
 - Общие элементы страниц находятся в `templates/`.
 - Тексты и структура отдельных страниц находятся в `content/`.
 - WordPress в `/home/arttherapist/htdocs/arttherapist.ru` не изменять.
-- Тестовая публикация: `https://arttherapist.ru/new/`.
+- Production: `https://arttherapist.ru/`.
 - Сервер: `arttherapist@huge001.tetabit.ru:22584`.
