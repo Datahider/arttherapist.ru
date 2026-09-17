@@ -167,7 +167,8 @@ em { color: var(--clay); font-style: italic; }
     .gallery-pair { gap: 8px; }
     .teaser-inner { display: block; }
     .price-grid .featured { transform: none; }
-    .program-hero h1 { font-size: clamp(2.8rem, 14vw, 4.4rem); }
+    .program-hero h1 { font-size: clamp(2.25rem, 11vw, 3rem); }
+    .program-hero h1 em { display: block; max-width: 100%; font-size: .72em; white-space: nowrap; }
     .hero-meta { gap: 16px; }
     .route-list li { grid-template-columns: 58px 1fr; gap: 15px; }
     .footer-inner { grid-template-columns: 1fr; gap: 20px; }
