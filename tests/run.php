@@ -42,6 +42,7 @@ if (is_file($project_dir . '/public/index.php')) {
     assertTrue(str_contains($home, 'href="./transform/"'), 'Homepage must link to the program');
     assertTrue(substr_count($home, '<header') === 1, 'Homepage must render one shared header');
     assertTrue(substr_count($home, '<footer') === 1, 'Homepage must render one shared footer');
+    assertTrue(str_contains($home, 'https://disk.yandex.ru/d/o9gz82aJnASqJg'), 'Footer must link to education documents');
 }
 
 if (is_file($project_dir . '/public/transform/index.php')) {
