@@ -144,7 +144,13 @@ em { color: var(--clay); font-style: italic; }
     h1 { font-size: clamp(3rem, 16vw, 4.5rem); }
     h2 { font-size: clamp(2rem, 10vw, 3rem); }
     .hero { min-height: auto; }
-    .hero-grid { min-height: auto; }
+    .hero-grid { min-height: auto; padding-top: 42px; }
+    .hero-copy { padding-top: 12px; }
+    .hero-copy h1 { margin-bottom: 22px; }
+    .hero-copy .button { width: 100%; }
+    .hero-portrait { margin-top: 46px; padding-bottom: 54px; }
+    .hero-portrait .paint-stroke { display: none; }
+    .hero-portrait img { position: relative; z-index: 1; width: 100%; border-radius: 42% 42% 8px 8px; filter: none; }
     .portrait-note { right: 0; bottom: 2%; padding: 13px 16px; }
     .card-grid, .card-grid.three, .price-grid { grid-template-columns: 1fr; }
     .card-grid article { min-height: auto; }
@@ -162,4 +168,3 @@ em { color: var(--clay); font-style: italic; }
     html { scroll-behavior: auto; }
     *, *::before, *::after { transition: none !important; }
 }
-
