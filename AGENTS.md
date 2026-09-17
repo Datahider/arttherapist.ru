@@ -1,6 +1,6 @@
 # AGENTS.md
 
-Наследует `/home/web/AGENTS.md`.
+Общие сведения об архитектуре, документации, проверках и деплое находятся в [README.md](README.md).
 
 ## Проект
 
@@ -11,4 +11,3 @@
 - WordPress в `/home/arttherapist/htdocs/arttherapist.ru` не изменять.
 - Тестовая публикация: `https://arttherapist.ru/new/`.
 - Сервер: `arttherapist@huge001.tetabit.ru:22584`.
-
