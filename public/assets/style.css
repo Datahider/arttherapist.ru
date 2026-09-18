@@ -61,6 +61,7 @@ em { color: var(--clay); font-style: italic; }
 .intro-text { padding-top: 54px; font-size: 1.1rem; }
 .about-grid { display: grid; grid-template-columns: .85fr 1fr; align-items: center; gap: clamp(50px, 8vw, 110px); }
 .mobile-about-photo { display: none; }
+.mobile-education-photo { display: none; }
 .photo-stack { position: relative; }
 .photo-stack img { width: 82%; max-height: 650px; object-fit: cover; border-radius: 48% 48% 8px 8px; }
 .scribble { position: absolute; right: 0; bottom: 5%; padding: 25px; border-radius: 50%; color: var(--white); background: var(--clay); font-family: var(--serif); text-align: center; transform: rotate(7deg); }
@@ -171,10 +172,14 @@ em { color: var(--clay); font-style: italic; }
     .mobile-about-photo img { width: 100%; aspect-ratio: 1; border-radius: 42% 42% 8px 8px; object-fit: cover; }
     .photo-stack { display: none; }
     .section-subheading { color: var(--ink); font-size: 1.25rem; font-weight: 600; line-height: 1.4; letter-spacing: normal; text-transform: none; }
+    .mobile-education-photo { display: block; margin: 30px 0; }
+    .mobile-education-photo img { width: 100%; aspect-ratio: 1; border-radius: 42% 42% 8px 8px; object-fit: cover; }
     .card-grid, .card-grid.three, .price-grid { grid-template-columns: 1fr; }
     .card-grid article { min-height: auto; }
     .card-grid h3 { margin-top: 25px; }
-    .gallery-pair { gap: 8px; }
+    .gallery-pair { display: block; transform: none; }
+    .gallery-pair .gallery-wings { width: 100%; aspect-ratio: 1; border-radius: 42% 42% 8px 8px; object-fit: cover; transform: none; }
+    .gallery-pair .gallery-portrait { display: none; }
     .teaser-inner { display: block; }
     .price-grid .featured { transform: none; }
     .program-hero h1 { font-size: clamp(1.85rem, 8.2vw, 2.5rem); }

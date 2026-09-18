@@ -50,6 +50,9 @@ $consultation_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравс�
         <div>
             <p class="eyebrow section-subheading">Обо мне</p>
             <p>Меня зовут Наталья, я практический психолог, арт-терапевт.</p>
+            <div class="mobile-education-photo">
+                <img src="<?= $asset_path ?>images/art-session-2.png" alt="Портрет Натальи Харитон" loading="lazy">
+            </div>
             <h5 class="section-subheading">Образование:</h5>
             <ul class="timeline">
                 <li><strong>2005</strong><span>МПГУ, Высшее педагогическое образование</span></li>
@@ -96,8 +99,8 @@ $consultation_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравс�
             <p>Моя задача как ведущего — создать творческое, доверительное пространство, чтобы ваше внимание сосредоточилось на главном — на встрече с собой.</p>
         </div>
         <div class="gallery-pair">
-            <img src="<?= $asset_path ?>images/art-session-1.png" alt="Материалы арт-терапии" loading="lazy">
-            <img src="<?= $asset_path ?>images/art-session-2.png" alt="Творческая работа на арт-терапии" loading="lazy">
+            <img class="gallery-wings" src="<?= $asset_path ?>images/art-session-1.png" alt="Наталья рисует крылья" loading="lazy">
+            <img class="gallery-portrait" src="<?= $asset_path ?>images/art-session-2.png" alt="Портрет Натальи Харитон" loading="lazy">
         </div>
     </div>
 </section>
