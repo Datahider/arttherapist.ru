@@ -60,6 +60,7 @@ em { color: var(--clay); font-style: italic; }
 .align-center { align-items: center; }
 .intro-text { padding-top: 54px; font-size: 1.1rem; }
 .about-grid { display: grid; grid-template-columns: .85fr 1fr; align-items: center; gap: clamp(50px, 8vw, 110px); }
+.mobile-about-photo { display: none; }
 .photo-stack { position: relative; }
 .photo-stack img { width: 82%; max-height: 650px; object-fit: cover; border-radius: 48% 48% 8px 8px; }
 .scribble { position: absolute; right: 0; bottom: 5%; padding: 25px; border-radius: 50%; color: var(--white); background: var(--clay); font-family: var(--serif); text-align: center; transform: rotate(7deg); }
@@ -166,7 +167,9 @@ em { color: var(--clay); font-style: italic; }
     .hero-portrait .paint-stroke { display: none; }
     .hero-portrait img { position: relative; z-index: 1; width: 100%; border-radius: 42% 42% 8px 8px; filter: none; }
     .portrait-note { right: 0; bottom: 2%; padding: 13px 16px; }
-    .photo-stack img { width: 100%; aspect-ratio: 1; margin-inline: auto; border-radius: 42% 42% 8px 8px; object-fit: cover; }
+    .mobile-about-photo { display: block; margin-top: 34px; }
+    .mobile-about-photo img { width: 100%; aspect-ratio: 1; border-radius: 42% 42% 8px 8px; object-fit: cover; }
+    .photo-stack { display: none; }
     .card-grid, .card-grid.three, .price-grid { grid-template-columns: 1fr; }
     .card-grid article { min-height: auto; }
     .card-grid h3 { margin-top: 25px; }

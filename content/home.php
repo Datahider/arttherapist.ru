@@ -30,6 +30,9 @@ $consultation_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравс�
     <div class="shell split">
         <div>
             <h2>От внутреннего напряжения — к спокойствию и пониманию</h2>
+            <div class="mobile-about-photo">
+                <img src="<?= $asset_path ?>images/natalia-at-work.jpg" alt="Арт-терапевтическая практика" loading="lazy">
+            </div>
         </div>
         <div class="intro-text">
             <h5>Что такое арт-терапия</h5>
