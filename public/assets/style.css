@@ -166,7 +166,7 @@ em { color: var(--clay); font-style: italic; }
     .hero-portrait .paint-stroke { display: none; }
     .hero-portrait img { position: relative; z-index: 1; width: 100%; border-radius: 42% 42% 8px 8px; filter: none; }
     .portrait-note { right: 0; bottom: 2%; padding: 13px 16px; }
-    .photo-stack img { margin-inline: auto; }
+    .photo-stack img { width: 100%; aspect-ratio: 1; margin-inline: auto; border-radius: 42% 42% 8px 8px; object-fit: cover; }
     .card-grid, .card-grid.three, .price-grid { grid-template-columns: 1fr; }
     .card-grid article { min-height: auto; }
     .card-grid h3 { margin-top: 25px; }
