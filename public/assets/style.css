@@ -184,7 +184,7 @@ em { color: var(--clay); font-style: italic; }
     .price-grid .featured { transform: none; }
     .program-hero h1 { font-size: clamp(1.85rem, 8.2vw, 2.5rem); }
     .program-hero h1 em { display: block; max-width: 100%; font-size: 1em; white-space: nowrap; }
-    .program-art { width: 100%; max-width: none; margin-inline: auto; padding: 0; }
+    .program-art { width: 100%; max-width: none; margin-inline: auto; padding: 0; background: transparent; }
     .program-art img, .program-hero .rounded-image, .essence .rounded-image, .dark-section .rounded-image { display: block; width: 100%; max-width: none; aspect-ratio: 1; margin-inline: auto; border-radius: 12px; object-fit: cover; }
     .hero-meta { gap: 16px; }
     .price-grid article { padding: 26px; overflow-wrap: anywhere; }
