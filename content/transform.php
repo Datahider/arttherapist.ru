@@ -17,7 +17,7 @@ $program_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравству
             <div class="hero-meta"><span><strong>5</strong> встреч</span><span><strong>1,5</strong> часа</span><span><strong>online</strong></span></div>
             <a class="button" href="<?= $program_url ?>">Записаться</a>
         </div>
-        <div class="program-art"><img src="<?= $asset_path ?>images/transform.png" alt="Программа Трансформация"></div>
+        <div class="program-art"><img src="<?= $asset_path ?>images/boundaries.jpg" alt="Творческая работа о переживании кризиса"></div>
     </div>
 </section>
 
@@ -68,7 +68,7 @@ $program_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравству
             <p>Через арт-терапию мы обходим ловушки ума и выходим на контакт с глубинным знанием тела и души. Это похоже на восстановление потерянного языка, на котором с вами говорит ваша же интуиция.</p>
             <p><strong>«Трансформация»</strong> — это и есть такой <strong>язык путешествия.</strong> Маршрут, на котором каждая встреча — это шаг от «я не знаю» к «я чувствую». Авторская программа, рождённая из веры в то, что любое обновление начинается с одного смелого шага — разрешить себе его.</p>
         </div>
-        <img class="rounded-image" src="<?= $asset_path ?>images/boundaries.jpg" alt="Творческая работа с личными границами" loading="lazy">
+        <img class="rounded-image" src="<?= $asset_path ?>images/transform.png" alt="Наталья Харитон" loading="lazy">
     </div>
 </section>
 
