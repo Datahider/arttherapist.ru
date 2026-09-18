@@ -190,7 +190,7 @@ em { color: var(--clay); font-style: italic; }
     .page-transform .card-grid h3 { margin: 0; text-align: left; }
     .page-transform .card-grid article > p { grid-column: 2; }
     .program-art { width: 100%; max-width: none; margin-inline: auto; padding: 0; background: transparent; }
-    .program-art img, .program-hero .rounded-image, .essence .rounded-image, .dark-section .rounded-image { display: block; width: 100%; max-width: none; aspect-ratio: 1; margin-inline: auto; border-radius: 12px; object-fit: cover; }
+    .program-art img, .page-transform .rounded-image { display: block; width: 100%; max-width: none; aspect-ratio: 1; margin-inline: auto; border-radius: 12px; object-fit: cover; }
     .hero-meta { gap: 16px; }
     .price-grid article { padding: 26px; overflow-wrap: anywhere; }
     .price-options { padding: 26px; }
