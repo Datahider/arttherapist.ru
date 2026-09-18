@@ -163,7 +163,6 @@ em { color: var(--clay); font-style: italic; }
     .hero-copy h1 { order: 1; margin-bottom: 22px; }
     .hero-portrait { order: 2; margin-top: 0; padding-bottom: 54px; }
     .hero-copy .lead { order: 3; }
-    .hero-copy .lead > p:first-child { font-size: 1.25rem; font-weight: 600; line-height: 1.4; }
     .hero-copy .button { order: 4; width: 100%; }
     .hero-portrait .paint-stroke { display: none; }
     .hero-portrait img { position: relative; z-index: 1; width: 100%; border-radius: 42% 42% 8px 8px; filter: none; }
@@ -171,7 +170,7 @@ em { color: var(--clay); font-style: italic; }
     .mobile-about-photo { display: block; margin-top: 34px; }
     .mobile-about-photo img { width: 100%; aspect-ratio: 1; border-radius: 42% 42% 8px 8px; object-fit: cover; }
     .photo-stack { display: none; }
-    .about-grid .eyebrow { font-size: 1.125rem; line-height: 1.4; }
+    .section-subheading { color: var(--ink); font-size: 1.25rem; font-weight: 600; line-height: 1.4; letter-spacing: normal; text-transform: none; }
     .card-grid, .card-grid.three, .price-grid { grid-template-columns: 1fr; }
     .card-grid article { min-height: auto; }
     .card-grid h3 { margin-top: 25px; }

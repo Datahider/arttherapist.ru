@@ -9,7 +9,7 @@ $consultation_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравс�
         <div class="hero-copy">
             <h1>Давай<br><em>порисуем?</em></h1>
             <div class="lead">
-                <p>Чем я могу быть вам полезна:</p>
+                <p class="section-subheading">Чем я могу быть вам полезна:</p>
                 <ul>
                     <li>Индивидуальная работа: психологическое консультирование методом арт-терапии</li>
                     <li>Групповая работа: арт-терапевтические группы онлайн и офлайн</li>
@@ -35,7 +35,7 @@ $consultation_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравс�
             </div>
         </div>
         <div class="intro-text">
-            <h5>Что такое арт-терапия</h5>
+            <h5 class="section-subheading">Что такое арт-терапия</h5>
             <p>Арт-терапия — это метод психологической помощи, в котором творчество используется как основной инструмент для выражения чувств, исследования внутреннего мира и поиска решений проблем.</p>
             <p>Это не урок искусства, а способ мягко и безопасно работать с глубинными переживаниями, включая те, которые сложно описать словами.</p>
         </div>
@@ -48,9 +48,9 @@ $consultation_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравс�
             <img src="<?= $asset_path ?>images/natalia-at-work.jpg" alt="Наталья ведёт арт-терапевтическую практику" loading="lazy">
         </div>
         <div>
-            <p class="eyebrow">Обо мне</p>
+            <p class="eyebrow section-subheading">Обо мне</p>
             <p>Меня зовут Наталья, я практический психолог, арт-терапевт.</p>
-            <h5>Образование:</h5>
+            <h5 class="section-subheading">Образование:</h5>
             <ul class="timeline">
                 <li><strong>2005</strong><span>МПГУ, Высшее педагогическое образование</span></li>
                 <li><strong>2013</strong><span>ИИПР, Проф. переподготовка по специальности «Практическая психология»</span></li>
