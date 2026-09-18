@@ -110,6 +110,7 @@ em { color: var(--clay); font-style: italic; }
 .hero-meta strong { display: block; font-family: var(--serif); font-size: 1.55rem; text-transform: none; }
 .statement .quote { color: var(--clay); font-family: var(--serif); font-size: clamp(1.45rem, 3vw, 2.25rem); line-height: 1.5; }
 .statement h2 { margin-top: 45px; }
+.statement-image { margin-top: 40px; }
 .rounded-image { width: 100%; max-height: 620px; object-fit: cover; border-radius: 50% 50% 8px 8px; }
 .dark-section { color: var(--white); background: var(--forest); }
 .dark-section .eyebrow { color: var(--peach); }
