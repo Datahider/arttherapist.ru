@@ -186,7 +186,9 @@ em { color: var(--clay); font-style: italic; }
     .program-hero h1 { font-size: clamp(1.85rem, 8.2vw, 2.5rem); }
     .program-hero h1 em { display: block; max-width: 100%; font-size: 1em; white-space: nowrap; }
     .page-transform h1, .page-transform h2, .page-transform h3, .page-transform h4, .page-transform h5, .page-transform h6 { text-align: center; }
-    .page-transform .card-grid h3 { text-align: left; }
+    .page-transform .card-grid article { display: grid; grid-template-columns: 48px 1fr; column-gap: 14px; }
+    .page-transform .card-grid h3 { margin: 0; text-align: left; }
+    .page-transform .card-grid article > p { grid-column: 2; }
     .program-art { width: 100%; max-width: none; margin-inline: auto; padding: 0; background: transparent; }
     .program-art img, .program-hero .rounded-image, .essence .rounded-image, .dark-section .rounded-image { display: block; width: 100%; max-width: none; aspect-ratio: 1; margin-inline: auto; border-radius: 12px; object-fit: cover; }
     .hero-meta { gap: 16px; }
