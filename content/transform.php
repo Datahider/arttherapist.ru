@@ -32,10 +32,11 @@ $program_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравству
 <section class="section muted">
     <div class="shell">
         <h2>Эта программа для тех, кто:</h2>
-        <div class="card-grid three">
+        <div class="card-grid">
             <article><span>01</span><h3>Переживает «кризис середины пути»</h3><p>Когда старые смыслы рушатся, а вопрос «кто я теперь?» звучит всё громче.</p></article>
             <article><span>02</span><h3>Выгорел на работе</h3><p>Кто чувствует, что пора развернуться от выгорания к чему-то настоящему, своему.</p></article>
             <article><span>03</span><h3>Выходит из декрета</h3><p>Кто ищет себя заново — не только как мама, но как женщина с собственным голосом и желаниями.</p></article>
+            <article><span>04</span><h3>Кто переживает кризис отношений или стадию развода</h3></article>
         </div>
     </div>
 </section>
