@@ -14,7 +14,7 @@ $program_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравству
                 <li>5 встреч с бережным терапевтическим сопровождением.</li>
                 <li>Когда кризис — это не конец, а начало новой себя.</li>
             </ul>
-            <div class="hero-meta"><span><strong>5</strong> встреч</span><span><strong>1,5</strong> часа</span><span><strong>online</strong></span></div>
+            <div class="hero-meta"><span>5 встреч</span><span>1,5 часа</span><span>Онлайн</span></div>
             <a class="button" href="<?= $program_url ?>">Записаться</a>
         </div>
         <div class="program-art"><img src="<?= $asset_path ?>images/boundaries.jpg" alt="Творческая работа о переживании кризиса"></div>
