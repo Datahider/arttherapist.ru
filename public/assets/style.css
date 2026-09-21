@@ -191,8 +191,9 @@ em { color: var(--clay); font-style: italic; }
     .page-transform .card-grid article > p { grid-column: 2; }
     .program-art { width: 100%; max-width: none; margin-inline: auto; padding: 0; background: transparent; }
     .program-art img, .page-transform .rounded-image { display: block; width: 100%; max-width: none; aspect-ratio: 1; margin-inline: auto; border-radius: 12px; object-fit: cover; }
-    .page-transform .hero-meta { display: flex; flex-wrap: nowrap; justify-content: center; gap: clamp(8px, 2.5vw, 18px); }
-    .page-transform .hero-meta span { font-size: clamp(.75rem, 3.4vw, 1rem); font-weight: 500; letter-spacing: normal; text-transform: none; }
+    .page-transform .hero-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 18px; }
+    .page-transform .hero-meta span { font-size: 1rem; font-weight: 500; letter-spacing: normal; text-transform: none; }
+    .page-transform .hero-meta span:first-child { flex-basis: 100%; text-align: center; }
     .price-grid article { padding: 26px; overflow-wrap: anywhere; }
     .price-options { padding: 26px; }
     .price-options p { display: block; }
