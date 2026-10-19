@@ -27,9 +27,15 @@ foreach ([
     '/templates/header.php',
     '/templates/footer.php',
     '/content/home.php',
+    '/content/mama.php',
+    '/content/privacy.php',
+    '/content/request-result.php',
     '/content/transform.php',
     '/content/not-found.php',
     '/public/index.php',
+    '/public/mama/index.php',
+    '/public/mama/request.php',
+    '/public/privacy/index.php',
     '/public/transform/index.php',
     '/public/transform2/index.php',
     '/public/assets/style.css',
@@ -43,13 +49,14 @@ if (is_file($project_dir . '/public/index.php')) {
     $_SERVER['REQUEST_URI'] = '/';
     $home = renderPage($project_dir . '/public/index.php');
     assertTrue(str_contains($home, '<html lang="ru">'), 'Homepage must declare Russian language');
-    assertTrue(str_contains($home, 'Наталья Харитон'), 'Homepage must name Natalia');
+    assertTrue(str_contains($home, 'Наталья Иоанниди'), 'Homepage must name Natalia');
     assertTrue(str_contains($home, 'href="./transform/"'), 'Homepage must link to the program');
     assertTrue(str_contains($home, '<link rel="canonical" href="https://arttherapist.ru/">'), 'Homepage must have its final canonical URL');
     assertTrue(str_contains($home, '<meta property="og:image" content="https://arttherapist.ru/assets/images/natalia-portrait.png">'), 'Homepage must have an Open Graph image');
     assertTrue(substr_count($home, '<header') === 1, 'Homepage must render one shared header');
     assertTrue(substr_count($home, '<footer') === 1, 'Homepage must render one shared footer');
     assertTrue(str_contains($home, 'https://disk.yandex.ru/d/o9gz82aJnASqJg'), 'Footer must link to education documents');
+    assertTrue(!str_contains($home, 'href="./mama/"'), 'Homepage must not link to the campaign landing page');
 
     $_SERVER['REQUEST_URI'] = '/missing-page/';
     http_response_code(200);
@@ -61,6 +68,34 @@ if (is_file($project_dir . '/public/index.php')) {
 
     $_SERVER['REQUEST_URI'] = '/';
     http_response_code(200);
+}
+
+if (is_file($project_dir . '/public/mama/index.php')) {
+    $mama = renderPage($project_dir . '/public/mama/index.php');
+    $telegram_link = 'https://t.me/Nata_lia1?text=';
+    assertTrue(str_contains($mama, 'Арт-терапия для мам, которые устали держаться'), 'Campaign page must state its focused offer');
+    assertTrue(str_contains($mama, 'Наталья Иоанниди'), 'Campaign page must use Natalia current public surname');
+    assertTrue(str_contains($mama, '25 минут'), 'Campaign page must describe the introductory call');
+    assertTrue(str_contains($mama, '5 встреч'), 'Campaign page must describe the five-session program');
+    assertTrue(str_contains($mama, 'name="name"'), 'Campaign page must request a name');
+    assertTrue(str_contains($mama, 'name="telegram"'), 'Campaign page must request a Telegram contact');
+    assertTrue(str_contains($mama, 'name="preferred_time"'), 'Campaign page must request a preferred contact time');
+    assertTrue(str_contains($mama, 'name="personal_data_consent"'), 'Campaign page must request separate personal data consent');
+    assertTrue(str_contains($mama, 'href="../privacy/#consent"'), 'Campaign consent must link to its terms');
+    assertTrue(substr_count($mama, $telegram_link) >= 2, 'Campaign calls to action must lead to Telegram');
+    assertTrue(str_contains($mama, '<link rel="canonical" href="https://arttherapist.ru/mama/">'), 'Campaign page must have its canonical URL');
+    assertTrue(str_contains($mama, '<meta property="og:image" content="https://arttherapist.ru/assets/images/natalia-at-work.jpg">'), 'Campaign page must have an Open Graph image');
+    assertTrue(substr_count($mama, '<header') === 1, 'Campaign page must render one shared header');
+    assertTrue(substr_count($mama, '<footer') === 1, 'Campaign page must render one shared footer');
+}
+
+if (is_file($project_dir . '/public/privacy/index.php')) {
+    $privacy = renderPage($project_dir . '/public/privacy/index.php');
+    assertTrue(str_contains($privacy, 'ИП Иоанниди Наталья Николаевна'), 'Privacy page must identify the operator');
+    assertTrue(str_contains($privacy, '772578058869'), 'Privacy page must contain the operator tax ID');
+    assertTrue(str_contains($privacy, '323774600482821'), 'Privacy page must contain the operator registration number');
+    assertTrue(str_contains($privacy, 'id="consent"'), 'Privacy page must contain separate consent terms');
+    assertTrue(str_contains($privacy, '<meta name="robots" content="noindex, follow">'), 'Privacy page must not be indexed');
 }
 
 if (is_file($project_dir . '/public/transform/index.php')) {
@@ -89,6 +124,7 @@ if (is_file($project_dir . '/public/sitemap.xml')) {
     $sitemap = (string) file_get_contents($project_dir . '/public/sitemap.xml');
     assertTrue(substr_count($sitemap, '<url>') === 2, 'Sitemap must contain exactly two public pages');
     assertTrue(str_contains($sitemap, '<loc>https://arttherapist.ru/transform/</loc>'), 'Sitemap must contain the program');
+    assertTrue(!str_contains($sitemap, '<loc>https://arttherapist.ru/mama/</loc>'), 'Campaign page must stay out of the sitemap');
 }
 
 if (is_file($project_dir . '/public/assets/style.css')) {

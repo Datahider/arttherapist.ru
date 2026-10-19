@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-$page_title = 'Программа «Трансформация» — Наталья Харитон';
+$page_title = 'Программа «Трансформация» — Наталья Иоанниди';
 $page_description = 'Пять арт-терапевтических встреч с бережным сопровождением: от ощущения тупика к пониманию, куда идти дальше.';
 $canonical_url = 'https://arttherapist.ru/transform/';
 $og_image = 'https://arttherapist.ru/assets/images/transform.png';

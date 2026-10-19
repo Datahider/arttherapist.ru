@@ -20,8 +20,8 @@ $consultation_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравс�
         </div>
         <div class="hero-portrait">
             <span class="paint-stroke" aria-hidden="true"></span>
-            <img src="<?= $asset_path ?>images/natalia-portrait.png" alt="Арт-терапевт Наталья Харитон">
-            <div class="portrait-note"><strong>Наталья Харитон</strong><span>Практический психолог,<br>арт-терапевт</span></div>
+            <img src="<?= $asset_path ?>images/natalia-portrait.png" alt="Арт-терапевт Наталья Иоанниди">
+            <div class="portrait-note"><strong>Наталья Иоанниди</strong><span>Практический психолог,<br>арт-терапевт</span></div>
         </div>
     </div>
 </section>
@@ -51,7 +51,7 @@ $consultation_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравс�
             <p class="eyebrow section-subheading">Обо мне</p>
             <p>Меня зовут Наталья, я практический психолог, арт-терапевт.</p>
             <div class="mobile-education-photo">
-                <img src="<?= $asset_path ?>images/art-session-2.png" alt="Портрет Натальи Харитон" loading="lazy">
+                <img src="<?= $asset_path ?>images/art-session-2.png" alt="Портрет Натальи Иоанниди" loading="lazy">
             </div>
             <h5 class="section-subheading">Образование:</h5>
             <ul class="timeline">
@@ -100,7 +100,7 @@ $consultation_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравс�
         </div>
         <div class="gallery-pair">
             <img class="gallery-wings" src="<?= $asset_path ?>images/art-session-1.png" alt="Наталья рисует крылья" loading="lazy">
-            <img class="gallery-portrait" src="<?= $asset_path ?>images/art-session-2.png" alt="Портрет Натальи Харитон" loading="lazy">
+            <img class="gallery-portrait" src="<?= $asset_path ?>images/art-session-2.png" alt="Портрет Натальи Иоанниди" loading="lazy">
         </div>
     </div>
 </section>

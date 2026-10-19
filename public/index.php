@@ -8,7 +8,7 @@ $request_path = is_string($request_path) ? rawurldecode($request_path) : '/';
 if (!in_array($request_path, ['/', '/index.php'], true)) {
     http_response_code(404);
 
-    $page_title = 'Страница не найдена — Наталья Харитон';
+    $page_title = 'Страница не найдена — Наталья Иоанниди';
     $page_description = 'Запрошенная страница не найдена.';
     $page_robots = 'noindex, follow';
     $canonical_url = 'https://arttherapist.ru/';
@@ -21,7 +21,7 @@ if (!in_array($request_path, ['/', '/index.php'], true)) {
     return;
 }
 
-$page_title = 'Арт-терапевт Наталья Харитон';
+$page_title = 'Арт-терапевт Наталья Иоанниди';
 $page_description = 'Индивидуальная и групповая арт-терапия онлайн и в Москве. Бережная психологическая помощь через творчество.';
 $canonical_url = 'https://arttherapist.ru/';
 $og_image = 'https://arttherapist.ru/assets/images/natalia-portrait.png';
