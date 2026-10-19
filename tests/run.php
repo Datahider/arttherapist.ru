@@ -55,6 +55,8 @@ if (is_file($project_dir . '/public/index.php')) {
     assertTrue(str_contains($home, '<meta property="og:image" content="https://arttherapist.ru/assets/images/natalia-portrait.png">'), 'Homepage must have an Open Graph image');
     assertTrue(substr_count($home, '<header') === 1, 'Homepage must render one shared header');
     assertTrue(substr_count($home, '<footer') === 1, 'Homepage must render one shared footer');
+    assertTrue(str_contains($home, "ym(113678955, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:\"dataLayer\", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});"), 'Homepage must initialize the Yandex Metrica counter');
+    assertTrue(str_contains($home, 'https://mc.yandex.ru/watch/113678955'), 'Homepage must contain the Yandex Metrica no-script pixel');
     assertTrue(str_contains($home, 'https://disk.yandex.ru/d/o9gz82aJnASqJg'), 'Footer must link to education documents');
     assertTrue(!str_contains($home, 'href="./mama/"'), 'Homepage must not link to the campaign landing page');
 
@@ -87,6 +89,7 @@ if (is_file($project_dir . '/public/mama/index.php')) {
     assertTrue(str_contains($mama, '<meta property="og:image" content="https://arttherapist.ru/assets/images/natalia-at-work.jpg">'), 'Campaign page must have an Open Graph image');
     assertTrue(substr_count($mama, '<header') === 1, 'Campaign page must render one shared header');
     assertTrue(substr_count($mama, '<footer') === 1, 'Campaign page must render one shared footer');
+    assertTrue(str_contains($mama, "ym(113678955, 'init'"), 'Campaign page must initialize the shared Yandex Metrica counter');
 }
 
 if (is_file($project_dir . '/public/privacy/index.php')) {
@@ -96,6 +99,7 @@ if (is_file($project_dir . '/public/privacy/index.php')) {
     assertTrue(str_contains($privacy, '323774600482821'), 'Privacy page must contain the operator registration number');
     assertTrue(str_contains($privacy, 'id="consent"'), 'Privacy page must contain separate consent terms');
     assertTrue(str_contains($privacy, '<meta name="robots" content="noindex, follow">'), 'Privacy page must not be indexed');
+    assertTrue(str_contains($privacy, "ym(113678955, 'init'"), 'Privacy page must initialize the shared Yandex Metrica counter');
 }
 
 if (is_file($project_dir . '/public/transform/index.php')) {
@@ -108,6 +112,7 @@ if (is_file($project_dir . '/public/transform/index.php')) {
     assertTrue(!preg_match('/href=["\']#["\']/', $program), 'Program page must not contain placeholder links');
     assertTrue(substr_count($program, '<header') === 1, 'Program must render one shared header');
     assertTrue(substr_count($program, '<footer') === 1, 'Program must render one shared footer');
+    assertTrue(str_contains($program, "ym(113678955, 'init'"), 'Program must initialize the shared Yandex Metrica counter');
 }
 
 if (is_file($project_dir . '/public/transform2/index.php')) {

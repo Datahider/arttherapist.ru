@@ -33,8 +33,23 @@ if ($style_version === false) {
     <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" href="<?= $asset_path ?>images/favicon.png" type="image/png">
     <link rel="stylesheet" href="<?= $asset_path ?>style.css?v=<?= $style_version ?>">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113678955', 'ym');
+
+        ym(113678955, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <!-- /Yandex.Metrika counter -->
 </head>
 <body class="page-<?= htmlspecialchars($page_id ?? 'default', ENT_QUOTES, 'UTF-8') ?>">
+<!-- Yandex.Metrika counter -->
+<noscript><div><img src="https://mc.yandex.ru/watch/113678955" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 <?php require __DIR__ . '/header.php'; ?>
 <main id="content">
 <?php require $content_template; ?>
