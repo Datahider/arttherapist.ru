@@ -128,6 +128,21 @@ $mama_url = 'https://t.me/Nata_lia1?text=' . rawurlencode('Здравствуй�
             </label>
             <button class="button" type="submit">Отправить анкету</button>
         </form>
+        <script>
+            (function () {
+                var form = document.querySelector('.mama-form');
+                var started = false;
+                function trackStart(event) {
+                    if (started || ['name', 'telegram', 'preferred_time'].indexOf(event.target.name) === -1 || event.target.value.trim() === '') {
+                        return;
+                    }
+                    started = true;
+                    ym(113678955,'reachGoal','form_start');
+                }
+                form.addEventListener('input', trackStart);
+                form.addEventListener('change', trackStart);
+            })();
+        </script>
     </div>
 </section>
 

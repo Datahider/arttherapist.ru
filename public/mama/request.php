@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-function renderResult(int $status, string $eyebrow, string $title, string $message, string $button, string $url): never
+function renderResult(int $status, string $eyebrow, string $title, string $message, string $button, string $url, bool $request_delivered = false): never
 {
     http_response_code($status);
 
@@ -90,4 +90,4 @@ if ($error !== '' || $status !== 200 || !is_array($telegram_response) || ($teleg
     renderResult(502, 'Ошибка доставки', 'Анкету не удалось отправить', 'Напишите Наталье напрямую в Telegram.', 'Написать Наталье', $direct_url);
 }
 
-renderResult(200, 'Спасибо', 'Анкета отправлена', 'Наталья получила заявку и напишет вам в Telegram.', 'Вернуться к программе', './');
+renderResult(200, 'Спасибо', 'Анкета отправлена', 'Наталья получила заявку и напишет вам в Telegram.', 'Вернуться к программе', './', true);

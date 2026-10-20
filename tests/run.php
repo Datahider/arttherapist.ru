@@ -139,6 +139,18 @@ if (is_file($project_dir . '/public/assets/style.css')) {
     assertTrue(!str_contains($css, 'linear-gradient(110deg, var(--paper) 0 58%, var(--peach) 58%)'), 'Program diagonal must not be tied to the viewport');
 }
 
+foreach ([false, true] as $request_delivered) {
+    $result_eyebrow = 'Результат';
+    $result_title = 'Результат';
+    $result_message = 'Результат';
+    $result_url = './';
+    $result_button = 'Вернуться';
+    ob_start();
+    require $project_dir . '/content/request-result.php';
+    $result_html = (string) ob_get_clean();
+    assertTrue(str_contains($result_html, "ym(113678955,'reachGoal','form_submit')") === $request_delivered, 'Submit goal must fire only for confirmed delivery');
+}
+
 if ($failures !== []) {
     fwrite(STDERR, implode(PHP_EOL, $failures) . PHP_EOL);
     exit(1);
